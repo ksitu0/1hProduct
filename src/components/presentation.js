@@ -8,7 +8,8 @@ function Presentation() {
   const [presUrl, setPresUrl] = useState("");
   const re = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 
-  const Upload = () => (
+  const Upload = () => (<>
+    <h1>Upload your presentation</h1>
     <Formik
         initialValues={{ pres: ""}}
         onSubmit={(values, actions) => {
@@ -31,6 +32,7 @@ function Presentation() {
         <button type="submit">Submit</button>
         </Form>
     </Formik>
+    </>
   );
 
   console.log(presUrl)
@@ -38,16 +40,15 @@ function Presentation() {
   return ( 
     <div className="presentation">
     {presUrl ?
-  <Iframe url={presUrl}
-    width="450px"
-    height="450px"
-    id="myId"
-    className="myClassname"
-    display="initial"
-    sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"
-    position="relative"/>
-    : 
-      <Upload />}
+    <Iframe url={presUrl}
+      width="450px"
+      height="450px"
+      id="myId"
+      className="myClassname"
+      display="initial"
+      sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation"
+      position="relative"/>
+      : <Upload />}
     </div>
   );
 }
