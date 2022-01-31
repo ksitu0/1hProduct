@@ -25,7 +25,9 @@ function Chat(props) {
             containerStyle={{
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              width: '100%',
+              height: '100%'
             }}
             onAPILoad={JitsiMeetAPI => console.log('Good Morning everyone!')}
           />)

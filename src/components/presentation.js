@@ -41,8 +41,8 @@ function Presentation() {
     <div className="presentation">
     {presUrl ?
     <Iframe url={presUrl}
-      width="450px"
-      height="450px"
+      width="100%"
+      height="100%"
       id="myId"
       className="myClassname"
       display="initial"
